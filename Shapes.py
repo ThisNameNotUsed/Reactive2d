@@ -11,7 +11,7 @@ from Proxy2D import *
 def circle(position, radius = 20):
     return ScreenObject(updater = circleUpdate, types = {"position": p2Type,
         "radius": numType}, name = 'Circle', init = circleInit, position = position,
-        radius = radius)
+        radius = radius)    #ScreenObject class in Reactive2D Proxy2D.py && Types-variables in pythonfrp Types.py
 #Reactive Stuff
 def circleInit(so, params):
     so.position = params["position"]
@@ -46,8 +46,8 @@ def squareUpdater(self):
     screenObjects.append(lambda g: drawSquare(g, positionNow, heightNow, widthNow))
 def drawSquare(g, p, h, w):
     g.setColor(Color(0,255,0))
-    g.fillRect(int(p.x-(h/2)), int(p.y-(w/2)), w, h)  
-
+    g.fillRect(int(p.x-(h/2)), int(p.y-(w/2)), w, h) 
+    
 #Triangle
 def triangle(position):
     return ScreenObject(updater = triangleUpdater, types = {"position": p2Type},
